@@ -46,6 +46,10 @@
         </Grid>
         <Grid Margin="60, 30, 60, -5">
             <Image Stretch="UniformToFill" Source="Resources/TopBar.png" />
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path Data="{StaticResource NewsIcon}" Fill="White" Stretch="Uniform" Width="50" Height="50" Margin="0 0 20 0"/>
+                <Path Data="{StaticResource CogIcon}" Fill="White" Stretch="Uniform" Width="50" Height="50"/>
+            </StackPanel>
         </Grid>
         <Grid Grid.Row="4" Margin="60, -5, 60, 20">
             <Image Stretch="Fill" Source="Resources/BottomBar.png"/>
@@ -53,7 +57,7 @@
         </Grid>
         <Grid Grid.Row="1" Grid.RowSpan="3">
             <Border Background="#1b1345" Margin="20"/>
-            <blazor:BlazorWebView HostPage="wwwroot\index.html" Services="{DynamicResource services}" Margin="40" Panel.ZIndex="0">
+            <blazor:BlazorWebView x:Name="MainWebView" HostPage="wwwroot\index.html" Services="{DynamicResource services}" Margin="40">
                 <blazor:BlazorWebView.RootComponents>
                     <blazor:RootComponent Selector="#app" ComponentType="{x:Type components:Counter}" />
                 </blazor:BlazorWebView.RootComponents>

@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.AspNetCore.Components.WebView;
+using Microsoft.Extensions.DependencyInjection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,13 @@ namespace Launcher
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddWpfBlazorWebView();
             Resources.Add("services", serviceCollection.BuildServiceProvider());
+
+			MainWebView.BlazorWebViewInitialized += WebViewInitialzed;
         }
-	}
+
+        private void WebViewInitialzed(object? sender, BlazorWebViewInitializedEventArgs e)
+        {
+            e.WebView.DefaultBackgroundColor = System.Drawing.Color.Transparent;
+        }
+    }
 }
