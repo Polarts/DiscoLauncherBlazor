@@ -1,31 +1,10 @@
 ﻿html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-}
-
-h1:focus {
-    outline: none;
-}
-
-a, .btn-link {
-    color: #0071c1;
-}
-
-.btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    overflow: hidden;
 }
 
 .valid.modified:not([type=checkbox]) {
     outline: 1px solid #26b050;
-}
-
-.invalid {
-    outline: 1px solid red;
-}
-
-.validation-message {
-    color: red;
 }
 
 #blazor-error-ui {
@@ -45,4 +24,9 @@ a, .btn-link {
     position: absolute;
     right: 0.75rem;
     top: 0.5rem;
+}
+
+.background-pattern-svg {
+    fill: var(--color-frame-background-pattern);
+    opacity: 0.3;
 }

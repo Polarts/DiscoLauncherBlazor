@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.WebView;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -26,6 +27,7 @@ namespace Launcher
             InitializeComponent();
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddWpfBlazorWebView();
+            serviceCollection.AddBlazorWebViewDeveloperTools();
             Resources.Add("services", serviceCollection.BuildServiceProvider());
 
             MainWebView.BlazorWebViewInitialized += WebViewInitialzed;
