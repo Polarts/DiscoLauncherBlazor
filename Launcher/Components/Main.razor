@@ -1,7 +1,7 @@
 ﻿
 <SVGDefs/>
 <div class="main-layout">
-    <div class="top-container">
+    <div class="top-container" @onmousedown="Top_MouseDown" @onmousemove="Top_MouseMove" @onmouseup="Top_MouseUp" @onmouseleave="Top_MouseUp">
         <svg viewBox="0 0 957 153">
             <g>
                 <polygon class="scan-line-svg" points="891 1 60 2 16 40 17 152 936.67 152 937 41 891 1" />
@@ -11,8 +11,38 @@
             </g>
         </svg>
     </div>
+    <div class="mid-container">
+
+    </div>
+    <div class="side-container">
+
+    </div>
+    <div class="bottom-container">
+
+    </div>
 </div>
 
 @code {
 
+    private bool isDragging = false;
+
+    private void Top_MouseDown()
+    {
+        isDragging = true;
+    }
+
+    private void Top_MouseMove(MouseEventArgs e)
+    {
+        if (isDragging)
+        {
+            System.Diagnostics.Debug.WriteLine($"Movement: {e.MovementX}, {e.MovementY} offset: {e.OffsetX}, {e.OffsetY}");
+            MainWindow2.Instance.Left += e.MovementX;
+            MainWindow2.Instance.Top += e.MovementY;
+        }
+    }
+
+    private void Top_MouseUp()
+    {
+        isDragging = false;
+    }
 }

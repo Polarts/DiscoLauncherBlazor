@@ -1,6 +1,7 @@
 ﻿html, body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
     overflow: hidden;
+    margin: 0;
 }
 
 .valid.modified:not([type=checkbox]) {
@@ -24,21 +25,4 @@
     position: absolute;
     right: 0.75rem;
     top: 0.5rem;
-}
-
-.scan-line-svg {
-    fill: url(#scan-line-gradient);
-    opacity: 0.3;
-}
-
-.frame-stroke-svg {
-    fill: var(--color-frame-edge-light);
-    filter: drop-shadow(0px 0px 5px var(--color-frame-edge-glow));
-}
-
-.frame-edge-svg {
-    fill: var(--color-frame-edge-dark-background);
-    stroke: var(--color-frame-edge-dark);
-    stroke-miterlimit: 10;
-    stroke-width: 2px;
 }

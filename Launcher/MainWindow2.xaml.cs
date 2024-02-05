@@ -22,8 +22,11 @@ namespace Launcher
     /// </summary>
     public partial class MainWindow2 : Window
     {
+        public static MainWindow2 Instance { get; private set; }
+
         public MainWindow2()
         {
+            MainWindow2.Instance = this;
             InitializeComponent();
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddWpfBlazorWebView();
