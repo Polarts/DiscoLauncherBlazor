@@ -4,6 +4,7 @@
     --color-text-hover: #fff76f;
     /* frame */
     --color-frame-edge-light: #7fb7d2;
+    --color-frame-edge-light-trail: #307fb7d2;
     --color-frame-edge-glow: #a1d6fa;
     --color-frame-edge-hover: #ebe93e;
     --color-frame-background-pattern: #1b1345;
