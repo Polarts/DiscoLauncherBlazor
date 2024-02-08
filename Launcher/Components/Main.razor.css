@@ -16,17 +16,18 @@
 }
 
 .top-container svg {
-    margin-bottom: -5px;
+    margin-bottom: -10px;
 }
 
 .mid-container {
     grid-area: mid;
-    background: red;
 }
 
 .side-container {
     grid-area: side;
     background: green;
+    margin-left: -10px;
+    z-index: -1;
 }
 
 .bottom-container {

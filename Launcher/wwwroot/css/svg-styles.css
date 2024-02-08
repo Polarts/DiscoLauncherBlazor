@@ -12,5 +12,5 @@
     fill: var(--color-frame-edge-dark-background);
     stroke: var(--color-frame-edge-dark);
     stroke-miterlimit: 10;
-    stroke-width: 2px;
+    stroke-width: 5;
 }
