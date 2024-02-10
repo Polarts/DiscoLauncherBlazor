@@ -1,6 +1,6 @@
 ﻿.scan-line-svg {
     fill: url(#scan-line-gradient);
-    opacity: 0.3;
+    opacity: 0.4;
 }
 
 .frame-stroke-svg {
@@ -12,5 +12,5 @@
     fill: var(--color-frame-edge-dark-background);
     stroke: var(--color-frame-edge-dark);
     stroke-miterlimit: 10;
-    stroke-width: 5;
+    stroke-width: 3;
 }

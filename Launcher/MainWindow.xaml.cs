@@ -29,7 +29,7 @@ namespace Launcher
             serviceCollection.AddWpfBlazorWebView();
             Resources.Add("services", serviceCollection.BuildServiceProvider());
 
-			MainWebView.BlazorWebViewInitialized += WebViewInitialzed;
+			//MainWebView.BlazorWebViewInitialized += WebViewInitialzed;
         }
 
         private void WebViewInitialzed(object? sender, BlazorWebViewInitializedEventArgs e)

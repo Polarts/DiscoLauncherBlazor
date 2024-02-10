@@ -15,22 +15,17 @@
     margin: 30px 60px 0 60px;
 }
 
-.top-container svg {
-    margin-bottom: -10px;
-}
-
 .mid-container {
     grid-area: mid;
 }
 
 .side-container {
     grid-area: side;
-    background: green;
-    margin-left: -10px;
+    margin-left: -15px;
     z-index: -1;
 }
 
 .bottom-container {
     grid-area: bottom;
-    background: blue;
+    z-index: -1;
 }

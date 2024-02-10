@@ -1,4 +1,4 @@
-﻿.mid-frame {
+﻿::deep .mid-frame {
     width: 100%;
     height: 100%;
 }

@@ -57,11 +57,11 @@
         </Grid>
         <Grid Grid.Row="1" Grid.RowSpan="3">
             <Border Background="#1b1345" Margin="20"/>
-            <blazor:BlazorWebView x:Name="MainWebView" HostPage="wwwroot\index.html" Services="{DynamicResource services}" Margin="40">
+            <!--<blazor:BlazorWebView x:Name="MainWebView" HostPage="wwwroot\index.html" Services="{DynamicResource services}" Margin="40">
                 <blazor:BlazorWebView.RootComponents>
                     <blazor:RootComponent Selector="#app" ComponentType="{x:Type components:Counter}" />
                 </blazor:BlazorWebView.RootComponents>
-            </blazor:BlazorWebView>
+            </blazor:BlazorWebView>-->
             <Image Stretch="Fill" Source="Resources/MidFrame.png"/>
         </Grid>
     </Grid>
