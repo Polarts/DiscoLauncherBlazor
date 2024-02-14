@@ -31,8 +31,8 @@
         if (isDragging)
         {
             System.Diagnostics.Debug.WriteLine($"Movement: {e.MovementX}, {e.MovementY} offset: {e.OffsetX}, {e.OffsetY}");
-            MainWindow2.Instance.Left += e.MovementX;
-            MainWindow2.Instance.Top += e.MovementY;
+            MainWindow.Instance.Left += e.MovementX;
+            MainWindow.Instance.Top += e.MovementY;
         }
     }
 
