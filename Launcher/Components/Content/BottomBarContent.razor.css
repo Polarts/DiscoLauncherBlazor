@@ -1,0 +1,10 @@
+.bottom-bar-wrapper {
+    position: relative;
+    width: 100%; height: 100%;
+}
+
+::deep .bottom-bar-shape {
+    position: absolute;
+    inset: 0; 
+    margin: -4px 90px 90px 90px;
+}   

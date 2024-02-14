@@ -8,61 +8,12 @@
         xmlns:blazor="clr-namespace:Microsoft.AspNetCore.Components.WebView.Wpf;assembly=Microsoft.AspNetCore.Components.WebView.Wpf"
         mc:Ignorable="d"
         Title="MainWindow2" Height="700" Width="1000"
-        Background="Transparent"
+        Background="#01000000"
         WindowStyle="None"
         AllowsTransparency="True">
-    <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="450"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="80"/>
-        </Grid.RowDefinitions>
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="750"/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-
-        <Grid Grid.Row="2" Grid.Column="1" Margin="-12, 0, 0, 0">
-            <Border Background="#1b1345" Margin="0, 10, 10, 10" BorderBrush="#7fb7d2" BorderThickness="2"/>
-            <Image x:Name="Corner_TopRight" Source="Resources/Corner.png" Width="150" Height="140" HorizontalAlignment="Right" VerticalAlignment="Top">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1"/>
-                        <TranslateTransform X="{Binding Width, ElementName=Corner_TopRight}"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-            <Image x:Name="Corner_BottomRight" Source="Resources/Corner.png" Width="150" Height="140" HorizontalAlignment="Right" VerticalAlignment="Bottom">
-                <Image.RenderTransform>
-                    <TransformGroup>
-                        <ScaleTransform ScaleX="-1" ScaleY="-1"/>
-                        <TranslateTransform X="{Binding Width, ElementName=Corner_BottomRight}" Y="{Binding Height, ElementName=Corner_BottomRight}"/>
-                    </TransformGroup>
-                </Image.RenderTransform>
-            </Image>
-        </Grid>
-        <Grid Margin="60, 30, 60, -5">
-            <Image Stretch="UniformToFill" Source="Resources/TopBar.png" />
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Path Data="{StaticResource NewsIcon}" Fill="White" Stretch="Uniform" Width="50" Height="50" Margin="0 0 20 0"/>
-                <Path Data="{StaticResource CogIcon}" Fill="White" Stretch="Uniform" Width="50" Height="50"/>
-            </StackPanel>
-        </Grid>
-        <Grid Grid.Row="4" Margin="60, -5, 60, 20">
-            <Image Stretch="Fill" Source="Resources/BottomBar.png"/>
-
-        </Grid>
-        <Grid Grid.Row="1" Grid.RowSpan="3">
-            <Border Background="#1b1345" Margin="20"/>
-            <blazor:BlazorWebView x:Name="MainWebView" HostPage="wwwroot\index.html" Services="{DynamicResource services}" Margin="40">
-                <blazor:BlazorWebView.RootComponents>
-                    <blazor:RootComponent Selector="#app" ComponentType="{x:Type components:Counter}" />
-                </blazor:BlazorWebView.RootComponents>
-            </blazor:BlazorWebView>
-            <Image Stretch="Fill" Source="Resources/MidFrame.png"/>
-        </Grid>
-    </Grid>
+        <blazor:BlazorWebView x:Name="MainWebView" HostPage="wwwroot\index.html" Services="{DynamicResource services}">
+            <blazor:BlazorWebView.RootComponents>
+                <blazor:RootComponent Selector="#app" ComponentType="{x:Type components:Main}" />
+            </blazor:BlazorWebView.RootComponents>
+        </blazor:BlazorWebView>
 </Window>

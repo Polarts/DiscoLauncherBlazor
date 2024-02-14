@@ -1,0 +1,43 @@
+﻿@using Launcher.Components.SVG
+@using Launcher.Components.Content
+
+<SVGDefs/>
+<div class="main-layout">
+    <div class="top-container" @onmousedown="Top_MouseDown" @onmousemove="Top_MouseMove" @onmouseup="Top_MouseUp" @onmouseleave="Top_MouseUp">
+        <TopBarShape Style="margin-bottom: -10px" />
+    </div>
+    <div class="mid-container">
+        <MidContent/>
+    </div>
+    <div class="side-container">
+        <SideContent/>
+    </div>
+    <div class="bottom-container">
+        <BottomBarContent/>
+    </div>
+</div>
+
+@code {
+
+    private bool isDragging = false;
+
+    private void Top_MouseDown()
+    {
+        isDragging = true;
+    }
+
+    private void Top_MouseMove(MouseEventArgs e)
+    {
+        if (isDragging)
+        {
+            System.Diagnostics.Debug.WriteLine($"Movement: {e.MovementX}, {e.MovementY} offset: {e.OffsetX}, {e.OffsetY}");
+            MainWindow.Instance.Left += e.MovementX;
+            MainWindow.Instance.Top += e.MovementY;
+        }
+    }
+
+    private void Top_MouseUp()
+    {
+        isDragging = false;
+    }
+}
