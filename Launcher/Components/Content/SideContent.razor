@@ -7,11 +7,21 @@
     <Corner Class="corner bottom-right"/>
 
     <div class="side-content-holder">
-
+        <button class="fl-button launch-button" @onmouseenter="OnMouseEnter" @onclick="OnClick">
+            <span class="fl-text">LAUNCH GAME</span>
+        </button>
     </div>
 
 </div>
 
 @code {
+    void OnMouseEnter(MouseEventArgs e)
+    {
+        System.Diagnostics.Debug.WriteLine(e.Type);
+    }
 
+    void OnClick()
+    {
+        System.Diagnostics.Debug.WriteLine("clicke");
+    }
 }

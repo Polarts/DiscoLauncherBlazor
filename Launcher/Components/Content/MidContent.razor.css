@@ -9,9 +9,15 @@
     height: 100%;
 }
 
+.mid-background {
+    position: absolute;
+    inset: 0;
+    background: var(--color-frame-background-pattern);
+    opacity: 0.4;
+    z-index: -2;
+}
+
 .mid-content-holder {
     position: absolute;
-    inset: 23px; z-index: -1;
-    padding: 10px;
-    background: red;    
+    inset: 33px;
 }

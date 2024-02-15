@@ -22,7 +22,6 @@
 .side-container {
     grid-area: side;
     margin-left: -15px;
-    z-index: -1;
 }
 
 .bottom-container {

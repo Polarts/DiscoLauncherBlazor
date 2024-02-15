@@ -1,0 +1,22 @@
+﻿.fl-button {
+    border: 2px solid var(--color-text-primary);
+    background: transparent;
+    text-transform: capitalize;
+    font-size: 30px;
+    padding: 5px;
+}
+
+    .fl-button:hover {
+        border-color: var(--color-text-hover);
+        color: var(--color-text-hover);
+    }
+
+        .fl-button:hover > .fl-text {
+            color: var(--color-text-hover);
+        }
+
+.fl-text {
+    color: var(--color-text-primary);
+    font-family: 'Agency FB';
+    filter: drop-shadow(1px 2px 0px #000000);
+}
