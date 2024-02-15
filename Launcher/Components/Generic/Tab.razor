@@ -1,0 +1,55 @@
+﻿@using Launcher.Utils
+
+
+<div class="tab-container@(IsSelected? " selected" : "")" @onclick="handleClick">
+	<svg viewBox="@icon?.viewBox" class="icon">
+		<path d="@icon?.geometry" />
+	</svg>
+	<span class="fl-text">@Label.ToUpper()</span>
+</div>
+
+
+@code {
+
+	[Parameter]
+	public string Label { get; set; } = "Tab";
+
+	[Parameter]
+	public bool IsSelected { get; set; } = false;
+
+	[Parameter]
+	public EventCallback<bool> OnChange { get; set; }
+
+	[Parameter]
+	public string Icon { get; set; } = "";
+	private string _iconKey = "";
+	private Icon? icon;
+
+
+	private async void handleClick()
+	{
+		IsSelected = !IsSelected;
+		await OnChange.InvokeAsync(IsSelected);
+	}
+
+	protected override void OnInitialized()
+	{
+		_iconKey = Icon;
+		assignIconResource();
+	}
+
+	protected override void OnParametersSet()
+	{
+		if (_iconKey != Icon)
+		{
+			assignIconResource();
+			_iconKey = Icon;
+		}
+	}
+
+
+	private void assignIconResource()
+	{
+			Utils.Icon.Presets.TryGetValue(_iconKey, out icon);
+	}
+}
