@@ -4,6 +4,8 @@
     text-transform: capitalize;
     font-size: 30px;
     padding: 5px;
+    user-select: none;
+    cursor: pointer;
 }
 
     .fl-button:hover {
