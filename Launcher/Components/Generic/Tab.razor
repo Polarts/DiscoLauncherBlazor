@@ -11,6 +11,8 @@
 
 @code {
 
+	public record ChangeEventArgs(string label, bool isSelected);
+
 	[Parameter]
 	public string Label { get; set; } = "Tab";
 
@@ -18,7 +20,7 @@
 	public bool IsSelected { get; set; } = false;
 
 	[Parameter]
-	public EventCallback<bool> OnChange { get; set; }
+	public EventCallback<ChangeEventArgs> OnChange { get; set; }
 
 	[Parameter]
 	public string Icon { get; set; } = "";
@@ -29,7 +31,7 @@
 	private async void handleClick()
 	{
 		IsSelected = !IsSelected;
-		await OnChange.InvokeAsync(IsSelected);
+		await OnChange.InvokeAsync(new ChangeEventArgs(Label, IsSelected));
 	}
 
 	protected override void OnInitialized()

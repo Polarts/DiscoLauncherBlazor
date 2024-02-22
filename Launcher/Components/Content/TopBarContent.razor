@@ -1,18 +1,49 @@
 ﻿@using Launcher.Components.SVG
 @using Launcher.Components.Generic
+@using Microsoft.AspNetCore.Components.Routing
+
+@inject NavigationManager Navigation
 
 <div class="top-bar-wrapper">
 	<TopBarShape Class="top-bar-shape" />
 	<div class="top-bar-content-holder">
-		<div class="tab">
-			<Tab Icon="News" Label="News"/>
-		</div>
-		<div class="tab">
-			<Tab Icon="Settings" Label="Settings" />
-		</div>
+		@foreach(var tab in tabData)
+		{
+			<div class="tab">
+				<Tab Icon="@tab.icon" Label="@tab.label" IsSelected="@(currentRoute == tab.label.ToLower())" OnChange="OnTabClick"/>
+			</div>
+		}
 	</div>
 </div>
 
 @code {
 
+    record TabData(string icon, string label);
+
+    TabData[] tabData = new[]
+    {
+		new TabData("News", "News"),
+		new TabData("Settings", "Settings")
+	};
+
+    string? currentRoute;
+
+    protected override void OnInitialized()
+    {
+        Navigation.LocationChanged += OnLocationChanged;
+    }
+
+    void OnTabClick(Tab.ChangeEventArgs args)
+    {
+        Navigation.NavigateTo($"/{args.label.ToLower()}");
+    }
+
+    void OnLocationChanged(object? sender, LocationChangedEventArgs? args)
+    {
+        if (args is not null)
+        {
+            currentRoute = args.Location.Split("/").Last();
+            StateHasChanged();
+        }
+    }
 }
