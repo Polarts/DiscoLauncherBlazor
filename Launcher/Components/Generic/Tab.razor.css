@@ -33,6 +33,9 @@
     50% {
         fill: var(--color-text-hover);
     }
+    100% {
+        fill: var(--color-text-primary);
+    }
 }
 
 @keyframes hover-text {
@@ -42,6 +45,9 @@
 
     50% {
         color: var(--color-text-hover);
+    }
+    100% {
+        color: var(--color-text-primary);
     }
 }
 
