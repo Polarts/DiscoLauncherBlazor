@@ -13,7 +13,7 @@
     position: absolute;
     inset: 20px;
     background: var(--color-frame-background-pattern);
-    opacity: 0.4;
+    opacity: var(--opacity-bg);
     z-index: -2;
 }
 

@@ -19,11 +19,30 @@
 }
 
 .tab-container:hover > .icon {
-    fill: var(--color-text-hover);
+    animation: hover-icon var(--animation-config);
 }
 
 .tab-container:hover > .fl-text {
-    color: var(--color-text-hover);
+    animation: hover-text var(--animation-config);
+}
+
+@keyframes hover-icon {
+    0% {
+        fill: var(--color-text-primary);
+    }
+    50% {
+        fill: var(--color-text-hover);
+    }
+}
+
+@keyframes hover-text {
+    0% {
+        color: var(--color-text-primary);
+    }
+
+    50% {
+        color: var(--color-text-hover);
+    }
 }
 
 .selected > .icon {

@@ -6,16 +6,23 @@
     padding: 5px;
     user-select: none;
     cursor: pointer;
+    box-shadow: var(--color-frame-edge-glow) 0px 0px 2px;
 }
 
     .fl-button:hover {
-        border-color: var(--color-text-hover);
-        color: var(--color-text-hover);
+        animation: hover-border var(--animation-config);
     }
 
-        .fl-button:hover > .fl-text {
-            color: var(--color-text-hover);
+    @keyframes hover-border {
+        0% {
+            border-color: var(--color-text-primary);
+            box-shadow: var(--color-frame-edge-glow) 0px 0px 2px;
         }
+        50% {
+            border-color: var(--color-text-hover);
+            box-shadow: var(--color-text-hover) 0px 0px 2px;
+        }
+    }
 
 .fl-text {
     color: var(--color-text-primary);
