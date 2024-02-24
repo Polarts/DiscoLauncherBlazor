@@ -1,19 +1,22 @@
-﻿@using Launcher.Components.SVG
-@using Launcher.Components.Content
+﻿@using Launcher.Components.Generic.SVG
+@using Launcher.Components.TopBar
+@using Launcher.Components.MainPanel
+@using Launcher.Components.SidePanel
+@using Launcher.Components.BottomBar
 
 <SVGDefs/>
 <div class="main-layout">
     <div class="top-container" @onmousedown="Top_MouseDown" @onmousemove="Top_MouseMove" @onmouseup="Top_MouseUp" @onmouseleave="Top_MouseUp">
-        <TopBarContent/>
+        <TopBar/>
     </div>
     <div class="mid-container">
-        <MidContent/>
+        <MainPanel/>
     </div>
     <div class="side-container">
-        <SideContent/>
+        <SidePanel/>
     </div>
     <div class="bottom-container">
-        <BottomBarContent/>
+        <BottomBar/>
     </div>
 </div>
 

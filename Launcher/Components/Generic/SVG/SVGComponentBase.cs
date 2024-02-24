@@ -1,7 +1,6 @@
-﻿
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
-namespace Launcher.Components.SVG
+namespace Launcher.Components.Generic.SVG
 {
     public class SVGComponentBase : ComponentBase
     {
