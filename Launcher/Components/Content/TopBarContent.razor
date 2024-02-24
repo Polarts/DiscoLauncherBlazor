@@ -10,7 +10,7 @@
 		@foreach(var tab in tabData)
 		{
 			<div class="tab">
-				<Tab Icon="@tab.icon" Label="@tab.label" IsSelected="@(currentRoute == tab.label.ToLower())" OnChange="OnTabClick"/>
+				<Tab Data="tab" IsSelected="@(currentRoute == tab.route)" OnChange="OnTabClick"/>
 			</div>
 		}
 	</div>
@@ -18,13 +18,13 @@
 
 @code {
 
-    record TabData(string icon, string label);
-
-    TabData[] tabData = new[]
+    Tab.TabData[] tabData = new Tab.TabData[]
     {
-		new TabData("News", "News"),
-		new TabData("Settings", "Settings")
-	};
+        new ("Tab_News", "News", "news"),
+        new ("Tab_ExternalSettings", "Ext. Settings", "externalsettings"),
+        new ("Tab_GameSettings", "Game Settings", "gamesettings"),
+        new ("Tab_Accounts", "Accounts", "accounts")
+    };
 
     string? currentRoute;
 
@@ -33,9 +33,9 @@
         Navigation.LocationChanged += OnLocationChanged;
     }
 
-    void OnTabClick(Tab.ChangeEventArgs args)
+    void OnTabClick(Tab.TabData args)
     {
-        Navigation.NavigateTo($"/{args.label.ToLower()}");
+        Navigation.NavigateTo($"/{args.route}");
     }
 
     void OnLocationChanged(object? sender, LocationChangedEventArgs? args)

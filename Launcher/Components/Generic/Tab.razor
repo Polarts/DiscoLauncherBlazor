@@ -5,25 +5,23 @@
 	<svg viewBox="@icon?.viewBox" class="icon">
 		<path d="@icon?.geometry" />
 	</svg>
-	<span class="fl-text">@Label.ToUpper()</span>
+	<span class="fl-text">@Data.label.ToUpper()</span>
 </div>
 
 
 @code {
 
-	public record ChangeEventArgs(string label, bool isSelected);
+	public record TabData(string icon, string label, string route);
 
 	[Parameter]
-	public string Label { get; set; } = "Tab";
+	public TabData Data { get; set; } = new TabData("", "Tab", "");
 
 	[Parameter]
 	public bool IsSelected { get; set; } = false;
 
 	[Parameter]
-	public EventCallback<ChangeEventArgs> OnChange { get; set; }
+	public EventCallback<TabData> OnChange { get; set; }
 
-	[Parameter]
-	public string Icon { get; set; } = "";
 	private string _iconKey = "";
 	private Icon? icon;
 
@@ -31,21 +29,21 @@
 	private async void handleClick()
 	{
 		IsSelected = !IsSelected;
-		await OnChange.InvokeAsync(new ChangeEventArgs(Label, IsSelected));
+		await OnChange.InvokeAsync(Data);
 	}
 
 	protected override void OnInitialized()
 	{
-		_iconKey = Icon;
+		_iconKey = Data.icon;
 		assignIconResource();
 	}
 
 	protected override void OnParametersSet()
 	{
-		if (_iconKey != Icon)
+		if (_iconKey != Data.icon)
 		{
 			assignIconResource();
-			_iconKey = Icon;
+			_iconKey = Data.icon;
 		}
 	}
 
