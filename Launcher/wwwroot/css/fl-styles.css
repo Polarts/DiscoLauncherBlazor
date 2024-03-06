@@ -33,3 +33,7 @@
     font-family: 'Agency FB';
     filter: drop-shadow(1px 2px 0px #000000);
 }
+
+.fl-progress-bar.full {
+    background: linear-gradient( 90deg, var(--color-progress-bar-full) 0%, rgba(0,0,0,0) 5%, rgba(0,0,0,0) 6%, var(--color-progress-bar-full) 6%);
+}

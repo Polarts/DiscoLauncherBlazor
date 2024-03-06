@@ -1,0 +1,36 @@
+﻿.progress-bar-wrapper {
+    width: 100%;
+    height: 25px;
+    position: relative;
+    --rect-width: 22px;
+    --box-shadow: 0px 0px 2px;
+}
+
+.rect {
+    height: 100%;
+    width: var(--rect-width);
+}
+
+.progress-bar {
+    position: absolute;
+    inset: 0;
+    width: 100%; height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .progress-bar.empty > .rect {
+        background: var(--color-progress-bar-empty);
+        box-shadow: var(--color-progress-bar-empty) var(--box-shadow);
+    }
+    .progress-bar.buffer > .rect {
+        background: var(--color-progress-bar-buffer);
+        box-shadow: var(--color-progress-bar-buffer) var(--box-shadow);
+    }
+    .progress-bar.full > .rect {
+        background: var(--color-progress-bar-full);
+        box-shadow: var(--color-progress-bar-full) var(--box-shadow);
+    } 
+

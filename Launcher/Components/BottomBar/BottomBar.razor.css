@@ -7,4 +7,11 @@
     position: absolute;
     inset: 0; 
     margin: -4px 90px 90px 90px;
-}   
+}
+
+.progress-bar-container {
+    position: absolute;
+    inset: 0; 
+    top: 22px;
+    margin: 0 230px;
+}

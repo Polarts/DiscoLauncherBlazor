@@ -1,0 +1,33 @@
+﻿@using Blazor.JS.Component
+@inherits JSComponent
+
+<div @ref="rootElement" class="progress-bar-wrapper">
+	<div class="progress-bar empty" style="clip-path: xywh(@(Buffer)% 0 100% 100%)">
+		@for (int i = 0; i < 10; i++)
+		{
+			<div class="rect"></div>
+		}
+	</div>
+	<div class="progress-bar buffer" style="clip-path: xywh(@(Progress)% 0 @(Buffer - Progress)% 100%)">
+		@for (int i = 0; i< 10; i++)
+		{
+			<div class="rect"></div>
+		}
+	</div>
+	<div class="progress-bar full" style="clip-path: xywh(0 0 @(Progress)% 100%)">
+		@for (int i = 0; i< 10; i++)
+		{
+			<div class="rect"></div>
+		}
+	</div>
+</div>
+
+@code {
+
+	[Parameter]
+	public int Progress { get; set; }
+
+	[Parameter]
+	public int Buffer { get; set; }
+
+}
